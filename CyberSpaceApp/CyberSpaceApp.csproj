@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34D15A8B-E142-471A-84F7-F8E9193D70B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CyberSpaceApp</RootNamespace>
+    <AssemblyName>CyberSpaceApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itext.barcodes, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.2\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CYBERRDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CYBERRDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CYBERRDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CYBERRDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CYBERRDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CYBERRDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AddtoList.cs" />
+    <Compile Include="Models\GameDetails.cs" />
+    <Compile Include="NEW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NEW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\ActionCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\ActionCategory.Designer.cs">
+      <DependentUpon>ActionCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\ActionRPGCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\ActionRPGCat.Designer.cs">
+      <DependentUpon>ActionRPGCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\AdventureCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\AdventureCategory.Designer.cs">
+      <DependentUpon>AdventureCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\AmongUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\AmongUs.Designer.cs">
+      <DependentUpon>AmongUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Apex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Apex.Designer.cs">
+      <DependentUpon>Apex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\AssassiansCreed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\AssassiansCreed.Designer.cs">
+      <DependentUpon>AssassiansCreed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\BattlefieldV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\BattlefieldV.Designer.cs">
+      <DependentUpon>BattlefieldV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\BattleRoyale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\BattleRoyale.Designer.cs">
+      <DependentUpon>BattleRoyale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DataAccess.cs" />
+    <Compile Include="UI Forms\CitiesSkylines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\CitiesSkylines.Designer.cs">
+      <DependentUpon>CitiesSkylines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\COD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\COD.Designer.cs">
+      <DependentUpon>COD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Cyberpunk2077.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Cyberpunk2077.Designer.cs">
+      <DependentUpon>Cyberpunk2077.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\DisplayCheckedItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\DisplayCheckedItemsForm.Designer.cs">
+      <DependentUpon>DisplayCheckedItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\FallGuys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\FallGuys.Designer.cs">
+      <DependentUpon>FallGuys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\FIFA22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\FIFA22.Designer.cs">
+      <DependentUpon>FIFA22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Fortnite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Fortnite.Designer.cs">
+      <DependentUpon>Fortnite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Games2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Games2.Designer.cs">
+      <DependentUpon>Games2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Games.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Games.Designer.cs">
+      <DependentUpon>Games.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\LeagueofLegends.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\LeagueofLegends.Designer.cs">
+      <DependentUpon>LeagueofLegends.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Minecraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Minecraft.Designer.cs">
+      <DependentUpon>Minecraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\MinecraftDungeons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\MinecraftDungeons.Designer.cs">
+      <DependentUpon>MinecraftDungeons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\MMORPGCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\MMORPGCategory.Designer.cs">
+      <DependentUpon>MMORPGCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\MOBACategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\MOBACategory.Designer.cs">
+      <DependentUpon>MOBACategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\SystemSpec.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI Forms\Overwatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Overwatch.Designer.cs">
+      <DependentUpon>Overwatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\RedDeadRedemption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\RedDeadRedemption.Designer.cs">
+      <DependentUpon>RedDeadRedemption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\RocketLeague.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\RocketLeague.Designer.cs">
+      <DependentUpon>RocketLeague.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\SelectGames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\SelectGames.Designer.cs">
+      <DependentUpon>SelectGames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\ShooterCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\ShooterCategory.Designer.cs">
+      <DependentUpon>ShooterCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\SimulationCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\SimulationCategory.Designer.cs">
+      <DependentUpon>SimulationCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\SocialDestructionCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\SocialDestructionCategory.Designer.cs">
+      <DependentUpon>SocialDestructionCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\SportsCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\SportsCategory.Designer.cs">
+      <DependentUpon>SportsCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\TheSims4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\TheSims4.Designer.cs">
+      <DependentUpon>TheSims4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\TheWitcher3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\TheWitcher3.Designer.cs">
+      <DependentUpon>TheWitcher3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\Valorant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\Valorant.Designer.cs">
+      <DependentUpon>Valorant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\WOW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\WOW.Designer.cs">
+      <DependentUpon>WOW.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI Forms\ActionCategory.resx">
+      <DependentUpon>ActionCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\ActionRPGCat.resx">
+      <DependentUpon>ActionRPGCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\AdventureCategory.resx">
+      <DependentUpon>AdventureCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\AmongUs.resx">
+      <DependentUpon>AmongUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Apex.resx">
+      <DependentUpon>Apex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\AssassiansCreed.resx">
+      <DependentUpon>AssassiansCreed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\BattlefieldV.resx">
+      <DependentUpon>BattlefieldV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\BattleRoyale.resx">
+      <DependentUpon>BattleRoyale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\CitiesSkylines.resx">
+      <DependentUpon>CitiesSkylines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\COD.resx">
+      <DependentUpon>COD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Cyberpunk2077.resx">
+      <DependentUpon>Cyberpunk2077.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\DisplayCheckedItemsForm.resx">
+      <DependentUpon>DisplayCheckedItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\FallGuys.resx">
+      <DependentUpon>FallGuys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\FIFA22.resx">
+      <DependentUpon>FIFA22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Fortnite.resx">
+      <DependentUpon>Fortnite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Games.resx">
+      <DependentUpon>Games.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Games2.resx">
+      <DependentUpon>Games2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\LeagueofLegends.resx">
+      <DependentUpon>LeagueofLegends.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Minecraft.resx">
+      <DependentUpon>Minecraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\MinecraftDungeons.resx">
+      <DependentUpon>MinecraftDungeons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\MMORPGCategory.resx">
+      <DependentUpon>MMORPGCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\MOBACategory.resx">
+      <DependentUpon>MOBACategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI Forms\Overwatch.resx">
+      <DependentUpon>Overwatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\RedDeadRedemption.resx">
+      <DependentUpon>RedDeadRedemption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\RocketLeague.resx">
+      <DependentUpon>RocketLeague.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\SelectGames.resx">
+      <DependentUpon>SelectGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\ShooterCategory.resx">
+      <DependentUpon>ShooterCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\SimulationCategory.resx">
+      <DependentUpon>SimulationCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\SocialDestructionCategory.resx">
+      <DependentUpon>SocialDestructionCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\SportsCategory.resx">
+      <DependentUpon>SportsCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\TheSims4.resx">
+      <DependentUpon>TheSims4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\TheWitcher3.resx">
+      <DependentUpon>TheWitcher3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\Valorant.resx">
+      <DependentUpon>Valorant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\WOW.resx">
+      <DependentUpon>WOW.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CYBERRDBDataSet.xsc">
+      <DependentUpon>CYBERRDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CYBERRDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CYBERRDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CYBERRDBDataSet.xss">
+      <DependentUpon>CYBERRDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CYBERRDBDataSet1.xsc">
+      <DependentUpon>CYBERRDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CYBERRDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CYBERRDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CYBERRDBDataSet1.xss">
+      <DependentUpon>CYBERRDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CYBERRDBDataSet2.xsc">
+      <DependentUpon>CYBERRDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CYBERRDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CYBERRDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CYBERRDBDataSet2.xss">
+      <DependentUpon>CYBERRDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="NEW.xsc">
+      <DependentUpon>NEW.xsd</DependentUpon>
+    </None>
+    <None Include="NEW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NEW.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NEW.xss">
+      <DependentUpon>NEW.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
